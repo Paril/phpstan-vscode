@@ -2,10 +2,10 @@
   "name": "phpstan",
   "displayName": "PHPStan",
   "description": "PHPStan for VSCode",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "license": "MIT",
-  "publisher": "swordev",
-  "author": "Juanra Gálvez <juanrgm724@gmail.com>",
+  "publisher": "paril",
+  "author": "Paril <me@paril.ca>",
   "icon": "assets/logo.png",
   "engines": {
     "vscode": "^1.50.0"
@@ -27,10 +27,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/swordev/phpstan-vscode.git"
+    "url": "https://github.com/paril/phpstan-vscode.git"
   },
   "bugs": {
-    "url": "https://github.com/swordev/phpstan-vscode/issues"
+    "url": "https://github.com/paril/phpstan-vscode/issues"
   },
   "main": "./lib/extension.js",
   "contributes": {
@@ -129,6 +129,14 @@
           "type": "integer",
           "description": "Milliseconds delay between file changes before run analyse",
           "default": 200
+        },
+        "phpstan.options": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Options to send to phpstan",
+          "default": []
         }
       }
     }

@@ -12,6 +12,7 @@ type SettingsType = {
 	configFileWatcherBasenames: string[]
 	analysedDelay: number
 	memoryLimit: string
+	options: string[]
 }
 
 const EXT_NAME = "phpstan"
@@ -113,6 +114,7 @@ function getSettings(): SettingsType {
 		configFileWatcherBasenames: get("configFileWatcherBasenames"),
 		analysedDelay: get("analysedDelay"),
 		memoryLimit: get("memoryLimit"),
+		options: get("options"),
 	}
 }
 
@@ -300,6 +302,7 @@ async function phpstanAnalyse(args?: string[]) {
 					? ["--memory-limit=" + settings.memoryLimit]
 					: []
 			)
+			.concat(settings.options)
 			.concat(["--error-format=json"])
 			.concat(args ?? [])
 
